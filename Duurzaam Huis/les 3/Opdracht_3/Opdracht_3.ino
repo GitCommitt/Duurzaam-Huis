@@ -26,6 +26,8 @@ bool licht()
    return false;
 }
 
+
+
   if(ldr_Value > 500){
     delay(delaytime);
     digitalWrite(D3, HIGH);
