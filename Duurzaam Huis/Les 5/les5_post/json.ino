@@ -15,10 +15,9 @@ void CreateJSON() {
   doc["heat_index"] = HeatIndex;
   doc["ldr_value"] = analogRead(LDR_Pin);
 
-  String jsonOutput;
-  serializeJson(doc, jsonOutput);
+  serializeJson(doc, jsonOut);
   
-  Serial.println(jsonOutput);
+  Serial.println(jsonOut);
 }
 // for easy JSON debugging
 void SendJSONToSerial() {

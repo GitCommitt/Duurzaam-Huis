@@ -26,7 +26,7 @@ void CheckWifi() {
 void SetupWifi() {
   WiFi.setSleepMode(WIFI_NONE_SLEEP);
   // Making sure all NodeMCU's have a different name!
-  deviceName = "NodeMCU_" + String(random(0x7FFFFFFF));
+  deviceName = "Daan_" + String(random(0x7FFFFFFF));
   WiFi.hostname(deviceName.c_str());
 
   if(serverProtocol.length() > 0 && serverIP.length() > 0 && serverDirectory.length() > 0) {
@@ -68,7 +68,7 @@ void SendPOST(char message[]) {
   if( https.begin(client, URL) ) {
     static unsigned long packages = 0, success = 0, loss = 0;
     https.addHeader("Content-Type", "application/json");
-    
+
     int responseCode = https.POST(message);
     String responseMsg = https.getString();
     
